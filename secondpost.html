@@ -32,12 +32,12 @@
             <code>
 function Component() {
   let [lst, setLst] = useState([]);
-  useEffect(() => {
-    [1, 2, 3, 4, 5].map(n => setList([...lst, n]));
+  useEffect(() =&gt; {
+    [1, 2, 3, 4, 5].map(n =&gt; setList([...lst, n]));
   }, []);
   return (
     &lt;div&gt;
-      {lst.map(item => 
+      {lst.map(item =&gt; 
         &lt;div key={"item: " + item}&gt;
           {item}
         &lt;/div&gt;
@@ -58,13 +58,13 @@ function Component() {
           shouldn't the <i>lst</i> variable be updated since the <i>lst</i> was in a higher scope and we are updating and accessing that same variable?
         </p>
         <p>
-          The reason is because everytime you call setState (<i>setLst</i>), the component function, <i>Component</i>, gets rerendered and your component is recalled (something like <i>Component() or React.createElement(Component)</i>. I don't know the specifics).
+          The reason is because everytime (not necessarily everytime because React might batch together setState calls for optimization reasons) you call setState (<i>setLst</i>), the component function, <i>Component</i>, gets rerendered and your component is recalled (something like <i>Component() or React.createElement(Component)</i>. I don't know the specifics).
           Once our component is rerendered, a new closure is created and so the useEffect function that you passed in previously, is referring to an old closure that holds an outdated version of <i>lst</i>.
           Which is why <i>lst</i> contains just 5 because in the old closure, <i>lst</i> is only equal to [] (an empty list).
         </p>
         <p>
-          In order to fix this problem, we need to change <pre><code>[1, 2, 3, 4, 5].map(n => setLst([...lst, n]))</code></pre>
-          to <pre><code>[1, 2, 3, 4, 5].map(n => setLst(currentLst => [...currentLst, n]))</code></pre>
+          In order to fix this problem, we need to change <pre><code>[1, 2, 3, 4, 5].map(n =&gt; setLst([...lst, n]))</code></pre>
+          to <pre><code>[1, 2, 3, 4, 5].map(n =&gt; setLst(currentLst =&gt; [...currentLst, n]))</code></pre>
         </p>
         <p>
           So instead of referring to an old closures version of <i>lst</i>,
