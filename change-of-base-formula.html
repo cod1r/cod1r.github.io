@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html>
+  <head>
+
+  </head>
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-size: larger;
+    }
+
+    .container {
+      display: flex;
+      justify-content: center;
+    }
+
+    .post {
+      max-width: 600px;
+      min-width: 100px;
+    }
+  </style>
+  <body>
+    8:16 pm 30/08/2024
+    <div class="container">
+      <div class="post">
+        <h1>Change of Base Formula</h1>
+        <h3>Have you ever wanted to take the logarithm of some value but with a base that is different from 2 or 10?</h3>
+        <article>
+          Let's just say you have that base (call this base <i>b</i>) raised to some power <i>p</i>, equal to the value you wanted to take the logarithm of, <i>V</i>.
+          <div style="text-align: center; padding: 10px">
+            <math><msup><mi>b</mi><mi>p</mi></msup><mo>=</mo><mi>V</mi></math>
+          </div>
+          First let's just take the log of both sides with base <i>b</i>
+          <div style="text-align: center; padding: 10px">
+            <math>
+                <msub>
+                  <mi>log</mi><mn>b</mn>
+                </msub>
+                <msup>
+                  <mi>b</mi>
+                  <mi>p</mi>
+                </msup><mo>=</mo>
+                <msub>
+                  <mi>log</mi><mn>b</mn>
+                </msub>
+                <mi>V</mi>
+            </math>
+          </div>
+          Apply the <a href="http://web.archive.org/web/20240831014115/https://en.wikipedia.org/wiki/Logarithm#Logarithmic_identities">Logarithm Power Rule</a>
+          <div style="text-align: center; padding: 10px">
+            <math>
+                <mi>p</mi>
+                <mo>&middot;</mo>
+                <msub>
+                  <mi>log</mi><mn>b</mn>
+                </msub>
+                b<mo>=</mo>
+                <msub>
+                  <mi>log</mi><mn>b</mn>
+                </msub>
+                <mi>V</mi>
+            </math>
+          </div>
+          The logarithm with base <i>b</i> of <i>b</i> is just <math><mn>1</mn></math>.
+          <div style="text-align: center; padding: 10px">
+            <math>
+                <mi>p</mi>
+                <mo>=</mo>
+                <msub>
+                  <mi>log</mi><mn>b</mn>
+                </msub>
+                <mi>V</mi>
+            </math>
+          </div>
+          Now let's just take the logarithm of both sides of the first equation with a base of 10.
+          <div style="text-align: center; padding: 10px">
+            <math>
+                <msub>
+                  <mi>log</mi><mn>10</mn>
+                </msub>
+                <msup>
+                  <mi>b</mi>
+                  <mi>p</mi>
+                </msup><mo>=</mo>
+                <msub>
+                  <mi>log</mi><mn>10</mn>
+                </msub>
+                <mi>V</mi>
+            </math>
+          </div>
+          Apply the <a href="http://web.archive.org/web/20240831014115/https://en.wikipedia.org/wiki/Logarithm#Logarithmic_identities">Logarithm Power Rule</a>
+          <div style="text-align: center; padding: 10px">
+            <math>
+                <mi>p</mi>
+                <mo>&middot;</mo>
+                <msub>
+                  <mi>log</mi><mn>10</mn>
+                </msub>
+                b<mo>=</mo>
+                <msub>
+                  <mi>log</mi><mn>10</mn>
+                </msub>
+                <mi>V</mi>
+            </math>
+          </div>
+          Now just divide
+          <div style="text-align: center; padding: 10px">
+            <math>
+                <mi>p</mi>
+                <mo>=</mo>
+                <mfrac>
+                <mrow>
+                <msub>
+                  <mi>log</mi><mn>10</mn>
+                </msub>
+                <mi>V</mi>
+                </mrow>
+                <mrow>
+<msub>
+                  <mi>log</mi><mn>10</mn>
+                </msub>
+                b
+                </mrow>
+                </mfrac>
+            </math>
+          </div>
+          Replace <i>p</i> with the logarithm with base <i>b</i> of <i>V</i>
+          <div style="text-align: center; padding: 10px">
+            <math>
+                <msub>
+                  <mi>log</mi><mn>b</mn>
+                </msub>
+                <mi>V</mi>
+                <mo>=</mo>
+                <mfrac>
+                <mrow>
+                <msub>
+                  <mi>log</mi><mn>10</mn>
+                </msub>
+                <mi>V</mi>
+                </mrow>
+                <mrow>
+<msub>
+                  <mi>log</mi><mn>10</mn>
+                </msub>
+                b
+                </mrow>
+                </mfrac>
+            </math>
+          </div>
+          The key ideas here are knowing that if you apply something to both sides of an equation, they remain equal; And the <a href="http://web.archive.org/web/20240831014115/https://en.wikipedia.org/wiki/Logarithm#Logarithmic_identities">Logarithm Power Rule</a>.
+        </article>
+      </div>
+    </div>
+
+  </body>
+</html>
